@@ -28,6 +28,7 @@ const Login = () => {
     // Autenticar ususario
     try {
       const { data } = await clienteAxios.post('/veterinarios/login', { email, password });
+      console.log(data);
       localStorage.setItem('apv_token', data.token);
       setAuth(data);
       navigate('/admin');
